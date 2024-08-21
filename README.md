@@ -29,7 +29,7 @@ Choices for `box_representation_method`: This argument dictates which of the fol
 To see explanations of other arguments see the `main.py` file.
 
 ## Acknowledgements
-Thanks to the codebase [ReCLIP](https://github.com/allenai/reclip)
+Thanks to the codebase [ReCLIP](https://github.com/allenai/reclip).
 
 ## Citation
 If you find this repository useful, please cite our paper:
