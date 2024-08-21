@@ -132,10 +132,8 @@ if __name__ == "__main__":
         else:
             raise NotImplementedError
         caption_bank += caption
-    #print(caption_bank[:5])
+
     for datum in tqdm(data):
-    #for datum in data:
-        #print(datum)
         if "coco" in datum["file_name"].lower():
             file_name = "_".join(datum["file_name"].split("_")[:-1])+".jpg"
         else:
