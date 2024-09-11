@@ -20,8 +20,8 @@ METHODS_MAP = {
 
 if __name__ == "__main__":
     parser = argparse.ArgumentParser()
-    parser.add_argument("--input_file", default="/homeB/zhuangjiedong/VLM/reclip_data/refcoco+_testa.jsonl",type=str, help="input file with expressions and annotations in jsonlines format")
-    parser.add_argument("--image_root", default="/homeB/zhuangjiedong/VLM/train2014",type=str, help="path to images (train2014 directory of COCO)")
+    parser.add_argument("--input_file", default="./refcoco+_testa.jsonl",type=str, help="input file with expressions and annotations in jsonlines format")
+    parser.add_argument("--image_root", default="./train2014",type=str, help="path to images (train2014 directory of COCO)")
     parser.add_argument("--clip_model", type=str, default="ViT-B/16", help="which clip model to use (should use RN50x4, ViT-B/32, or both separated by a comma")
     parser.add_argument("--albef_path", type=str, default=None, help="to use ALBEF (instead of CLIP), specify the path to the ALBEF checkpoint")
     parser.add_argument("--method", type=str, default="baseline", help="method to solve expressions")
@@ -132,10 +132,8 @@ if __name__ == "__main__":
         else:
             raise NotImplementedError
         caption_bank += caption
-    #print(caption_bank[:5])
+
     for datum in tqdm(data):
-    #for datum in data:
-        #print(datum)
         if "coco" in datum["file_name"].lower():
             file_name = "_".join(datum["file_name"].split("_")[:-1])+".jpg"
         else:
